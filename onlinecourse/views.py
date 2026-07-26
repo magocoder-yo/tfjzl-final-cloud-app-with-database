@@ -112,7 +112,7 @@ def enroll(request, course_id):
          # Redirect to show_exam_result with the submission id
 
 def submit(request, course_id):
-    course = get_object_or_404(course, pk=course_id)
+    course = get_object_or_404(Course, pk=course_id)
     user = request.user
     enrollment = Enrollment.objects.get(user=user, course=course)
 
